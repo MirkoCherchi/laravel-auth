@@ -1,9 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-    <ul>
+    <a class="btn btn-primary my-3" href="{{ route('admin.projects.create') }}">New Project</a>
+    <hr>
+    <ul class="m-0 p-0">
         @foreach ($projects as $project)
-            <li>{{ $project->title }}</li>
+            <li class="list-unstyled py-1">{{ $project->title }}</li>
         @endforeach
     </ul>
 @endsection
