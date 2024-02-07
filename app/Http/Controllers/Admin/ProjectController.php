@@ -44,7 +44,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect()->route('admin.projects.index', $project->id);
+        return redirect()->route('admin.projects.index')->with('success', 'Progetto creato correttamente');
     }
 
     /**

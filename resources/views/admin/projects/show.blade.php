@@ -1,16 +1,23 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2 class="text-center">Dettaglio Progetto</h2>
-    <div class="d-flex justify-content-center align-items-center py-3">
-        <div class="card" style="width: 30rem;">
-            <div class="card-body">
-                <h5 class="card-title text-center">{{ $project->title }}</h5>
-                <p class="card-text"><strong>Descrizione: </strong>{{ $project->description }}</p>
+    <div class="container py-3">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="m-0">Dettaglio Progetto</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ $project->title }}</h5>
+                        <p class="card-text"><strong>Descrizione:</strong> {{ $project->description }}</p>
+                    </div>
+                </div>
+                <div class="mt-3 text-center">
+                    <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm">Torna Indietro</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="d-flex justify-content-center align-items-center py-2">
-        <a href="{{ route('admin.projects.index') }}" class="btn btn-primary py-2">Torna ai Progetti</a>
     </div>
 @endsection

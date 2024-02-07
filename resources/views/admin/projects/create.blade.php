@@ -27,6 +27,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Inserisci</button>
 
+
         </form>
     </div>
 @endsection
