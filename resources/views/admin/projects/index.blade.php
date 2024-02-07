@@ -8,14 +8,32 @@
             </div>
             <div class="col-auto">
                 @if (session('success'))
-                    <div class="toast show align-items-center text-white bg-success border-0" role="alert"
-                        aria-live="assertive" aria-atomic="true">
-                        <div class="d-flex">
-                            <div class="toast-body">
+                    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                        <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header bg-success text-white">
+                                <strong class="me-auto">Successo!</strong>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body bg-success-subtle text-emphasis-success">
                                 {{ session('success') }}
                             </div>
-                            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
-                                aria-label="Close"></button>
+                        </div>
+                    </div>
+                @endif
+
+
+                @if (session('message'))
+                    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                        <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header bg-danger text-white">
+                                <strong class="me-auto">Eliminato!</strong>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body bg-danger-subtle text-emphasis-danger">
+                                {{ session('message') }}
+                            </div>
                         </div>
                     </div>
                 @endif
@@ -35,7 +53,7 @@
                                 <form action="{{ route('admin.projects.destroy', $project_item) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <input class="btn btn-danger mc-delete" type="submit" value="Cancella Progetto">
+                                    <input class="btn btn-danger mc-delete" type="submit" value="Elimina Progetto">
                                 </form>
                             </div>
                         </div>
