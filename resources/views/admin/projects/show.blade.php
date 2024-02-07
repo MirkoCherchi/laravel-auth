@@ -6,7 +6,8 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
-                        <h3 class="m-0">Dettaglio Progetto</h3>
+                        <h3 class="m-0"><i class="fas fa-info-circle"></i>
+                            Dettaglio Progetto: {{ $project->title }}</h3>
                     </div>
 
                     <div class="card-body">
@@ -15,7 +16,9 @@
                     </div>
                 </div>
                 <div class="mt-3 text-center">
-                    <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm">Torna Indietro</a>
+                    <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm"><i
+                            class="fas fa-arrow-left"></i>
+                        Torna Indietro</a>
                 </div>
             </div>
         </div>

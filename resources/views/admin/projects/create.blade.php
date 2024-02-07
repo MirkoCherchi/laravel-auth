@@ -1,9 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container py-2">
         <h2 class="text-center">Inserisci Nuovo Progetto</h2>
-        <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3">Torna in HomePage</a>
+        <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm my-3"><i
+                class="fas fa-arrow-left mx-1"></i>
+            Torna in HomePage</a>
 
         <form action="{{ route('admin.projects.store') }}" method="POST">
             @csrf
@@ -25,7 +27,8 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Inserisci</button>
+            <button type="submit" class="btn btn-success"><i class="fas fa-check"></i>
+                Inserisci</button>
 
 
         </form>

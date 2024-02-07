@@ -4,33 +4,41 @@
     <div class="container mt-4">
         <div class="row mb-3">
             <div class="col">
-                <a class="btn btn-primary btn-sm" href="{{ route('admin.projects.create') }}">
-                    <i class="fas fa-plus"></i> Nuovo Progetto
-                </a>
+                <a class="btn btn-primary btn-sm" href="{{ route('admin.projects.create') }}">Nuovo Progetto</a>
+            </div>
+            <div class="col-auto">
+                @if (session('success'))
+                    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                        <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header bg-success text-white">
+                                <strong class="me-auto">Successo!</strong>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body bg-success-subtle text-emphasis-success">
+                                {{ session('success') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
+
+                @if (session('message'))
+                    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                        <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header bg-danger text-white">
+                                <strong class="me-auto">Eliminato!</strong>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body bg-danger-subtle text-emphasis-danger">
+                                {{ session('message') }}
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
-        @if (session('success'))
-            <div class="row">
-                <div class="col">
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Successo!</strong> {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                </div>
-            </div>
-        @endif
-
-        @if (session('message'))
-            <div class="row">
-                <div class="col">
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Eliminato!</strong> {{ session('message') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                </div>
-            </div>
-        @endif
-
         <div class="row">
             <div class="col">
                 <div class="list-group">
