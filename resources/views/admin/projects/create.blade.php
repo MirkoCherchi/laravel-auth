@@ -4,7 +4,7 @@
     <div class="container py-2">
         <h2 class="text-center">Inserisci Nuovo Progetto</h2>
         <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm my-3"><i
-                class="fas fa-arrow-left mx-1"></i>
+                class="fas fa-arrow-left me-1"></i>
             Torna in HomePage</a>
 
         <form action="{{ route('admin.projects.store') }}" method="POST">

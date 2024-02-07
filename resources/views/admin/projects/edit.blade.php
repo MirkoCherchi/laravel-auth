@@ -1,16 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container py-3">
+    <div class="container-fluid py-3">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-primary  text-white">
-                        <h3 class="m-0">Modifica Progetto: {{ $project->title }}</h3>
+                        <h5 class="m-0"><i class="fas fa-edit me-1"></i>Modifica Progetto: {{ $project->title }}</h5>
                     </div>
 
                     <div class="card-body">
-                        <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm mb-3">Torna indietro</a>
+                        <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm mb-3"><i
+                                class="fas fa-arrow-left me-1"></i>Torna indietro</a>
                         <form action="{{ route('admin.projects.update', $project->id) }}" method="POST">
                             @csrf
                             @method('PUT')
@@ -33,7 +34,8 @@
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Modifica</button>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-save me-1"></i>
+                                Modifica</button>
                         </form>
                     </div>
                 </div>

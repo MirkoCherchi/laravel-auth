@@ -6,8 +6,8 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header bg-primary text-white">
-                        <h3 class="m-0"><i class="fas fa-info-circle"></i>
-                            Dettaglio Progetto: {{ $project->title }}</h3>
+                        <h5 class="m-0"><i class="fas fa-info-circle"></i>
+                            Dettaglio Progetto: {{ $project->title }}</h5>
                     </div>
 
                     <div class="card-body">

@@ -4,14 +4,17 @@
     <div class="container mt-4">
         <div class="row mb-3">
             <div class="col">
-                <a class="btn btn-primary btn-sm" href="{{ route('admin.projects.create') }}">Nuovo Progetto</a>
+                <a class="btn btn-primary btn-sm" href="{{ route('admin.projects.create') }}"><i
+                        class="fa-solid fa-plus me-1"></i>Nuovo Progetto</a>
             </div>
+
             <div class="col-auto">
+
                 @if (session('success'))
                     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
                         <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header bg-success text-white">
-                                <strong class="me-auto">Successo!</strong>
+                                <strong class="me-auto"><i class="fa-solid fa-check me-1"></i>Successo!</strong>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
                                     aria-label="Close"></button>
                             </div>
@@ -22,12 +25,11 @@
                     </div>
                 @endif
 
-
                 @if (session('message'))
                     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
                         <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header bg-danger text-white">
-                                <strong class="me-auto">Eliminato!</strong>
+                                <strong class="me-auto"><i class="fa-solid fa-trash-can me-1"></i>Eliminato!</strong>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
                                     aria-label="Close"></button>
                             </div>
@@ -37,7 +39,9 @@
                         </div>
                     </div>
                 @endif
+
             </div>
+
         </div>
         <div class="row">
             <div class="col">
