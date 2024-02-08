@@ -70,9 +70,11 @@ class ProjectController extends Controller
     {
         $this->validated($request);
         $data = $request->all();
+
+        $data['slug'] = Str::slug($request->title);
         $project->update($data);
 
-        return redirect()->route('admin.projects.index', $project->id);
+        return redirect()->route('admin.projects.index');
     }
 
     /**

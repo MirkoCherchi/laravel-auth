@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary btn-sm mb-3"><i
                                 class="fas fa-arrow-left me-1"></i>Torna indietro</a>
-                        <form action="{{ route('admin.projects.update', $project->id) }}" method="POST">
+                        <form action="{{ route('admin.projects.update', $project) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="mb-3">

@@ -51,16 +51,16 @@
                             <h5 class="mb-0">{{ $project_item->title }}</h5>
                             <div class="btn-group" role="group">
                                 <a class="btn btn-primary" href="{{ route('admin.projects.show', $project_item) }}">
-                                    <i class="fas fa-info-circle"></i> Info Progetto
+                                    <i class="fas fa-info-circle me-2"></i>Info
                                 </a>
                                 <a class="btn btn-secondary" href="{{ route('admin.projects.edit', $project_item) }}">
-                                    <i class="fas fa-edit"></i> Modifica Progetto
+                                    <i class="fas fa-edit me-2"></i>Modifica
                                 </a>
                                 <form action="{{ route('admin.projects.destroy', $project_item) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger mc-delete">
-                                        <i class="fas fa-trash-alt"></i> Elimina Progetto
+                                        <i class="fas fa-trash-alt me-2"></i>Elimina
                                     </button>
                                 </form>
                             </div>
