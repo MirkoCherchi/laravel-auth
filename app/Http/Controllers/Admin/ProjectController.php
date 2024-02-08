@@ -44,7 +44,7 @@ class ProjectController extends Controller
 
         $project->save();
 
-        return redirect()->route('admin.projects.index')->with('success', 'Progetto creato correttamente');
+        return redirect()->route('admin.projects.index')->with('success', 'Il progetto "' . $project->title . '" è stato creato correttamente.');
     }
 
     /**
@@ -84,7 +84,7 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.projects.index', $project->id)->with('message', 'Progetto Eliminato correttamente');
+        return redirect()->route('admin.projects.index')->with('message', 'Il progetto "' . $project->title . '" è stato eliminato correttamente.');
     }
 
     public function validated(Request $request)
